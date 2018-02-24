@@ -1,18 +1,3 @@
-<!-- A pipe is good for formatting strings. Angular comes with many
-built in pipes and you can create your own as well -->
-<div *ngIf="selectedHero">
-<h2>{{selectedHero.name | uppercase}} Details</h2>
-<div>
-  <span>Id:</span>
-  {{selectedHero.id}}
-</div>
-<div>
-  <span>Name:</span>
-  <input [(ngModel)]="selectedHero.name" placeholder="name" />
-</div>
-</div>
-
-
 <h2> My Heroes </h2>
 
 <ul class="heroes">
@@ -23,3 +8,6 @@ built in pipes and you can create your own as well -->
   </li>
 
 </ul>
+
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
