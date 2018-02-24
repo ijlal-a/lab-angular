@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Hero} from '../hero';
+import {HEROES} from '../mock-heroes';
 
 /**
 You always import the Component symbol from the Angular core library
@@ -19,11 +20,14 @@ and annotate the component class with @Component.
 export class HeroesComponent implements OnInit {
 // TODO: check member declaration of various types (object, array, other types)
   //hero = 'Doga';  // single property
-  hero: Hero = { // object hero of type class Hero intialized with (1, 'Doga')
-  id:1,
-  name:'Doga'
-  };
+  selectedHero: Hero;
 
+  // list of heros
+  heroes = HEROES;
+
+  onSelect(hero: Hero): void{
+    this.selectedHero = hero;
+  }
 
 
   constructor() { }
